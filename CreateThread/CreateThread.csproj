@@ -8,7 +8,7 @@
     <ProjectGuid>{1E92B390-B184-4863-8FA5-3A11924C4FB0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>CreateThread_PoC</RootNamespace>
-    <AssemblyName>CreateThread</AssemblyName>
+    <AssemblyName>CreateThread_PoC</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

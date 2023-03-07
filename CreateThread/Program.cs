@@ -1,14 +1,10 @@
-﻿using System.Threading.Tasks;
-
-namespace CreateThread_PoC
+﻿namespace CreateThread_PoC
 {
     internal class Program
     {
-        private static async Task Main(string[] args)
+        private static void Main(string[] args)
         {
             PoC.PopCalc();
-            return;
         }
-
     }
 }
