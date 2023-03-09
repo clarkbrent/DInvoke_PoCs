@@ -1,0 +1,3 @@
+[submodule "DInvoke"]
+    path = DInvoke
+    url = https://github.com/TheWover/DInvoke
